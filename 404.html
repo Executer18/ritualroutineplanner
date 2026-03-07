@@ -1,270 +1,517 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-<title>404 — Page Not Found | RITUAL Planner</title>
-<meta name="description" content="This page doesn't exist. Head back to RITUAL and keep building your daily routine."/>
-<meta name="robots" content="noindex, nofollow"/>
-<meta name="theme-color" content="#0a0a0f"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Bricolage+Grotesque:wght@200;400;600;800&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --bg:#0a0a0f;--surf:#13131c;--surf2:#1c1c28;--surf3:#242433;
-  --brd:rgba(255,255,255,0.07);--brd2:rgba(255,255,255,0.14);
-  --txt:#f0ede8;--txt2:#b8b4ae;--mut:rgba(240,237,232,0.40);
-  --acc:#c8a96e;--acl:#e8d5a8;--a2:#7b9cff;--a3:#ff6b6b;--a4:#6bcfb3;
-}
-html{height:100%;-webkit-text-size-adjust:100%;}
-body{
-  background:var(--bg);color:var(--txt);
-  font-family:'Bricolage Grotesque',system-ui,sans-serif;
-  min-height:100vh;min-height:100dvh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  overflow:hidden;position:relative;
-  -webkit-font-smoothing:antialiased;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover" />
+  <title>404 — Page Not Found | RITUAL Planner</title>
+  <meta name="description"
+    content="This page doesn't exist. Head back to RITUAL and keep building your daily routine." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#0a0a0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Bricolage+Grotesque:wght@200;400;600;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* ── Noise texture ── */
-body::before{
-  content:'';position:fixed;inset:0;z-index:1;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
-  opacity:.4;
-}
+    :root {
+      --bg: #0a0a0f;
+      --surf: #13131c;
+      --surf2: #1c1c28;
+      --surf3: #242433;
+      --brd: rgba(255, 255, 255, 0.07);
+      --brd2: rgba(255, 255, 255, 0.14);
+      --txt: #f0ede8;
+      --txt2: #b8b4ae;
+      --mut: rgba(240, 237, 232, 0.40);
+      --acc: #c8a96e;
+      --acl: #e8d5a8;
+      --a2: #7b9cff;
+      --a3: #ff6b6b;
+      --a4: #6bcfb3;
+    }
 
-/* ── Background orbs ── */
-.orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
-.orb{position:absolute;border-radius:50%;filter:blur(100px);animation:drift 22s ease-in-out infinite alternate;will-change:transform;}
-.orb-1{width:min(550px,80vw);height:min(550px,80vw);background:rgba(200,169,110,.07);top:-15%;right:-10%;}
-.orb-2{width:min(450px,70vw);height:min(450px,70vw);background:rgba(123,156,255,.05);bottom:-15%;left:-10%;animation-delay:-9s;}
-.orb-3{width:min(300px,45vw);height:min(300px,45vw);background:rgba(107,207,179,.04);top:45%;left:40%;animation-delay:-17s;}
-@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,28px) scale(1.09)}}
+    html {
+      height: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
 
-/* ── Main content ── */
-.page{
-  position:relative;z-index:2;
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:32px 24px;
-  max-width:520px;width:100%;
-  animation:rise .7s cubic-bezier(.34,1.56,.64,1) both;
-}
-@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    body {
+      background: var(--bg);
+      color: var(--txt);
+      font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
 
-/* ── Logo ── */
-.logo{
-  font-family:'Playfair Display',serif;font-size:18px;font-weight:900;
-  letter-spacing:-.5px;
-  background:linear-gradient(135deg,var(--acc),var(--acl));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  display:flex;align-items:center;gap:8px;text-decoration:none;
-  margin-bottom:52px;
-}
-.logo-dot{
-  width:7px;height:7px;background:var(--acc);border-radius:50%;
-  -webkit-text-fill-color:initial;flex-shrink:0;
-  animation:pulse 2s ease-in-out infinite;
-}
-@keyframes pulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(200,169,110,.5)}50%{transform:scale(1.2);box-shadow:0 0 0 7px rgba(200,169,110,0)}}
+    /* ── Noise texture ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      opacity: .4;
+    }
 
-/* ── 404 Number ── */
-.error-num-wrap{
-  position:relative;display:inline-flex;align-items:center;justify-content:center;
-  margin-bottom:10px;
-}
-.error-num{
-  font-family:'Playfair Display',serif;font-size:clamp(100px,22vw,160px);
-  font-weight:900;line-height:1;letter-spacing:-6px;
-  background:linear-gradient(135deg,var(--acc) 0%,var(--acl) 40%,rgba(200,169,110,.2) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  user-select:none;
-}
-.error-badge{
-  position:absolute;bottom:14px;right:-10px;
-  background:var(--surf);border:1px solid var(--brd2);border-radius:20px;
-  padding:5px 12px;font-family:'DM Mono',monospace;font-size:9px;
-  letter-spacing:2px;text-transform:uppercase;color:var(--mut);
-  white-space:nowrap;
-}
+    /* ── Background orbs ── */
+    .orbs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
 
-/* ── Divider ── */
-.divider{
-  width:40px;height:1px;
-  background:linear-gradient(90deg,transparent,var(--acc),transparent);
-  margin:18px auto 26px;
-}
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      animation: drift 22s ease-in-out infinite alternate;
+      will-change: transform;
+    }
 
-/* ── Heading ── */
-.error-title{
-  font-family:'Playfair Display',serif;font-size:clamp(22px,5vw,30px);
-  font-weight:700;font-style:italic;letter-spacing:-.5px;
-  margin-bottom:12px;line-height:1.2;
-}
-.error-sub{
-  font-size:14px;color:var(--txt2);line-height:1.75;
-  margin-bottom:36px;max-width:360px;
-}
-.error-sub span{color:var(--acc);}
+    .orb-1 {
+      width: min(550px, 80vw);
+      height: min(550px, 80vw);
+      background: rgba(200, 169, 110, .07);
+      top: -15%;
+      right: -10%;
+    }
 
-/* ── Suggestions grid ── */
-.suggestions{
-  display:grid;grid-template-columns:1fr 1fr;gap:10px;
-  width:100%;margin-bottom:36px;
-}
-.sug-card{
-  background:var(--surf);border:1px solid var(--brd);border-radius:14px;
-  padding:16px 14px;text-align:left;text-decoration:none;
-  transition:all .25s cubic-bezier(.34,1.56,.64,1);
-  display:flex;flex-direction:column;gap:5px;
-}
-.sug-card:hover{
-  background:var(--surf2);border-color:var(--brd2);
-  transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,.35);
-}
-.sug-icon{font-size:22px;line-height:1;margin-bottom:2px;}
-.sug-title{font-size:12.5px;font-weight:700;color:var(--txt);}
-.sug-desc{font-size:10.5px;color:var(--mut);font-family:'DM Mono',monospace;letter-spacing:.2px;}
+    .orb-2 {
+      width: min(450px, 70vw);
+      height: min(450px, 70vw);
+      background: rgba(123, 156, 255, .05);
+      bottom: -15%;
+      left: -10%;
+      animation-delay: -9s;
+    }
 
-/* ── CTA Button ── */
-.cta{
-  background:linear-gradient(135deg,var(--acc),var(--acl));
-  color:#0a0a0f;border:none;
-  padding:14px 36px;border-radius:50px;
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-size:14px;font-weight:800;
-  cursor:pointer;text-decoration:none;
-  display:inline-flex;align-items:center;gap:8px;
-  transition:all .3s cubic-bezier(.34,1.56,.64,1);
-  letter-spacing:-.1px;box-shadow:0 4px 24px rgba(200,169,110,.25);
-}
-.cta:hover{transform:scale(1.05) translateY(-2px);box-shadow:0 10px 34px rgba(200,169,110,.4);}
-.cta:active{transform:scale(.97);}
+    .orb-3 {
+      width: min(300px, 45vw);
+      height: min(300px, 45vw);
+      background: rgba(107, 207, 179, .04);
+      top: 45%;
+      left: 40%;
+      animation-delay: -17s;
+    }
 
-/* ── Quote ── */
-.quote-line{
-  margin-top:40px;
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:12px;color:var(--mut);letter-spacing:.3px;
-  display:flex;align-items:center;gap:8px;
-}
-.quote-line::before,.quote-line::after{
-  content:'';flex:1;height:1px;
-  background:linear-gradient(90deg,transparent,var(--brd2));
-}
-.quote-line::after{background:linear-gradient(90deg,var(--brd2),transparent);}
+    @keyframes drift {
+      from {
+        transform: translate(0, 0) scale(1)
+      }
 
-/* ── Floating particles ── */
-.particles{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;}
-.p{
-  position:absolute;border-radius:50%;
-  animation:float-p linear infinite;
-  opacity:0;
-}
-@keyframes float-p{
-  0%{transform:translateY(100vh) scale(0);opacity:0;}
-  10%{opacity:1;}
-  90%{opacity:.4;}
-  100%{transform:translateY(-10vh) scale(1);opacity:0;}
-}
+      to {
+        transform: translate(40px, 28px) scale(1.09)
+      }
+    }
 
-/* ── Responsive ── */
-@media(max-width:480px){
-  .suggestions{grid-template-columns:1fr;}
-  .logo{margin-bottom:36px;}
-  .error-num{letter-spacing:-4px;}
-  .error-badge{font-size:8px;padding:4px 9px;}
-}
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
-}
-</style>
+    /* ── Main content ── */
+    .page {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 32px 24px;
+      max-width: 520px;
+      width: 100%;
+      animation: rise .7s cubic-bezier(.34, 1.56, .64, 1) both;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(28px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* ── Logo ── */
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -.5px;
+      background: linear-gradient(135deg, var(--acc), var(--acl));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      margin-bottom: 52px;
+    }
+
+    .logo-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--acc);
+      border-radius: 50%;
+      -webkit-text-fill-color: initial;
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(200, 169, 110, .5)
+      }
+
+      50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 7px rgba(200, 169, 110, 0)
+      }
+    }
+
+    /* ── 404 Number ── */
+    .error-num-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+
+    .error-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(100px, 22vw, 160px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -6px;
+      background: linear-gradient(135deg, var(--acc) 0%, var(--acl) 40%, rgba(200, 169, 110, .2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      user-select: none;
+    }
+
+    .error-badge {
+      position: absolute;
+      bottom: 14px;
+      right: -10px;
+      background: var(--surf);
+      border: 1px solid var(--brd2);
+      border-radius: 20px;
+      padding: 5px 12px;
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--mut);
+      white-space: nowrap;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--acc), transparent);
+      margin: 18px auto 26px;
+    }
+
+    /* ── Heading ── */
+    .error-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 5vw, 30px);
+      font-weight: 700;
+      font-style: italic;
+      letter-spacing: -.5px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .error-sub {
+      font-size: 14px;
+      color: var(--txt2);
+      line-height: 1.75;
+      margin-bottom: 36px;
+      max-width: 360px;
+    }
+
+    .error-sub span {
+      color: var(--acc);
+    }
+
+    /* ── Suggestions grid ── */
+    .suggestions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 36px;
+    }
+
+    .sug-card {
+      background: var(--surf);
+      border: 1px solid var(--brd);
+      border-radius: 14px;
+      padding: 16px 14px;
+      text-align: left;
+      text-decoration: none;
+      transition: all .25s cubic-bezier(.34, 1.56, .64, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .sug-card:hover {
+      background: var(--surf2);
+      border-color: var(--brd2);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+    }
+
+    .sug-icon {
+      font-size: 22px;
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+
+    .sug-title {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--txt);
+    }
+
+    .sug-desc {
+      font-size: 10.5px;
+      color: var(--mut);
+      font-family: 'DM Mono', monospace;
+      letter-spacing: .2px;
+    }
+
+    /* ── CTA Button ── */
+    .cta {
+      background: linear-gradient(135deg, var(--acc), var(--acl));
+      color: #0a0a0f;
+      border: none;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all .3s cubic-bezier(.34, 1.56, .64, 1);
+      letter-spacing: -.1px;
+      box-shadow: 0 4px 24px rgba(200, 169, 110, .25);
+    }
+
+    .cta:hover {
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: 0 10px 34px rgba(200, 169, 110, .4);
+    }
+
+    .cta:active {
+      transform: scale(.97);
+    }
+
+    /* ── Quote ── */
+    .quote-line {
+      margin-top: 40px;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 12px;
+      color: var(--mut);
+      letter-spacing: .3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .quote-line::before,
+    .quote-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--brd2));
+    }
+
+    .quote-line::after {
+      background: linear-gradient(90deg, var(--brd2), transparent);
+    }
+
+    /* ── Floating particles ── */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .p {
+      position: absolute;
+      border-radius: 50%;
+      animation: float-p linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes float-p {
+      0% {
+        transform: translateY(100vh) scale(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: .4;
+      }
+
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* ── Responsive ── */
+    @media(max-width:480px) {
+      
+      .logo {
+        margin-bottom: 36px;
+      }
+
+      .error-num {
+        letter-spacing: -4px;
+      }
+
+      .error-badge {
+        font-size: 8px;
+        padding: 4px 9px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="orbs" aria-hidden="true">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-</div>
-<div class="particles" id="particles" aria-hidden="true"></div>
-
-<main class="page" role="main">
-
-  <!-- Logo -->
-  <a href="/" class="logo" aria-label="Go back to RITUAL home">
-    <span class="logo-dot" aria-hidden="true"></span>
-    RITUAL
-  </a>
-
-  <!-- 404 Number -->
-  <div class="error-num-wrap" aria-hidden="true">
-    <div class="error-num">404</div>
-    <div class="error-badge">Page Missing</div>
+  <div class="orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
   </div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
 
-  <div class="divider" aria-hidden="true"></div>
+  <main class="page" role="main">
 
-  <!-- Heading -->
-  <h1 class="error-title">This page didn't follow its usual routine.</h1>
-  <p class="error-sub">
-    The page you want doesn't exist, or it might never have existed. Your <span>daily routine</span> is still waiting for you, no matter what.
-  </p>
-
-  <!-- Suggestion cards -->
-  <nav class="suggestions" aria-label="Where to go next">
-    <a href="/" class="sug-card">
-      <span class="sug-icon">⏱</span>
-      <span class="sug-title">Today's Timeline</span>
-      <span class="sug-desc">View & plan your day</span>
+    <!-- Logo -->
+    <a href="/" class="logo" aria-label="Go back to RITUAL home">
+      <span class="logo-dot" aria-hidden="true"></span>
+      RITUAL
     </a>
-    <a href="/" class="sug-card">
-      <span class="sug-icon">📊</span>
-      <span class="sug-title">Your Stats</span>
-      <span class="sug-desc">Streaks & completion</span>
+
+    <!-- 404 Number -->
+    <div class="error-num-wrap" aria-hidden="true">
+      <div class="error-num">404</div>
+      <div class="error-badge">Page Missing</div>
+    </div>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <!-- Heading -->
+    <h1 class="error-title">This page didn't follow its usual routine.</h1>
+    <p class="error-sub">
+      The page you want doesn't exist, or it might never have existed. Your <span>daily routine</span> is still waiting
+      for you, no matter what.
+    </p>
+
+    <!-- Suggestion cards -->
+    <nav class="suggestions" aria-label="Where to go next">
+      <a href="/" class="sug-card">
+        <span class="sug-icon">⏱</span>
+        <span class="sug-title">Today's Timeline</span>
+        <span class="sug-desc">View & plan your day</span>
+      </a>
+      <a href="/" class="sug-card">
+        <span class="sug-icon">📊</span>
+        <span class="sug-title">Your Stats</span>
+        <span class="sug-desc">Streaks & completion</span>
+      </a>
+      <a href="/" class="sug-card">
+        <span class="sug-icon">➕</span>
+        <span class="sug-title">Add a Task</span>
+        <span class="sug-desc">Build your routine</span>
+      </a>
+      <a href="/" class="sug-card">
+        <span class="sug-icon">🟩</span>
+        <span class="sug-title">Heatmap</span>
+        <span class="sug-desc">16 weeks of habits</span>
+      </a>
+    </nav>
+
+    <!-- CTA -->
+    <a href="/" class="cta" aria-label="Return to RITUAL planner">
+      ✦ Back to RITUAL
     </a>
-    <a href="/" class="sug-card">
-      <span class="sug-icon">➕</span>
-      <span class="sug-title">Add a Task</span>
-      <span class="sug-desc">Build your routine</span>
-    </a>
-    <a href="/" class="sug-card">
-      <span class="sug-icon">🟩</span>
-      <span class="sug-title">Heatmap</span>
-      <span class="sug-desc">16 weeks of habits</span>
-    </a>
-  </nav>
 
-  <!-- CTA -->
-  <a href="/" class="cta" aria-label="Return to RITUAL planner">
-    ✦ Back to RITUAL
-  </a>
+    <!-- Quote -->
+    <div class="quote-line" role="note" aria-label="Motivational quote">
+      Every routine is a promise to yourself.
+    </div>
 
-  <!-- Quote -->
-  <div class="quote-line" role="note" aria-label="Motivational quote">
-    Every routine is a promise to yourself.
-  </div>
+  </main>
 
-</main>
-
-<script>
-/* ── Spawn floating particles ── */
-(function(){
-  const colors=['rgba(200,169,110,.18)','rgba(123,156,255,.12)','rgba(107,207,179,.10)','rgba(232,123,255,.10)'];
-  const wrap=document.getElementById('particles');
-  for(let i=0;i<18;i++){
-    const p=document.createElement('div');
-    p.className='p';
-    const size=Math.random()*5+2;
-    const delay=Math.random()*18;
-    const dur=Math.random()*14+10;
-    const left=Math.random()*100;
-    p.style.cssText=`width:${size}px;height:${size}px;left:${left}%;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${dur}s;animation-delay:${delay}s;`;
-    wrap.appendChild(p);
-  }
-})();
-</script>
+  <script>
+    /* ── Spawn floating particles ── */
+    (function () {
+      const colors = ['rgba(200,169,110,.18)', 'rgba(123,156,255,.12)', 'rgba(107,207,179,.10)', 'rgba(232,123,255,.10)'];
+      const wrap = document.getElementById('particles');
+      for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        p.className = 'p';
+        const size = Math.random() * 5 + 2;
+        const delay = Math.random() * 18;
+        const dur = Math.random() * 14 + 10;
+        const left = Math.random() * 100;
+        p.style.cssText = `width:${size}px;height:${size}px;left:${left}%;background:${colors[Math.floor(Math.random() * colors.length)]};animation-duration:${dur}s;animation-delay:${delay}s;`;
+        wrap.appendChild(p);
+      }
+    })();
+  </script>
 
 </body>
+
 </html>

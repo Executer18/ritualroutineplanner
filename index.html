@@ -19,8 +19,7 @@
   <meta name="author" content="Kushal" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
   <meta name="theme-color" content="#0a0a0f" />
-  <link rel="canonical" h
-  ref="https://ritualroutineplanner.com/" />
+  <link rel="canonical" h ref="https://ritualroutineplanner.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -124,6 +123,12 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Bricolage+Grotesque:wght@200;400;600;800&display=swap"
     rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Ritual" />
+  <link rel="manifest" href="/site.webmanifest" />
   <style>
     :root {
       --bg: #0a0a0f;
@@ -295,27 +300,35 @@
       text-decoration: none;
     }
 
-    .logo-dot {
-      width: 8px;
-      height: 8px;
-      background: var(--acc);
-      border-radius: 50%;
-      -webkit-text-fill-color: initial;
+    .logo-star {
+      width: 18px;
+      height: 18px;
       flex-shrink: 0;
-      animation: dot-pulse 2s ease-in-out infinite;
+      -webkit-text-fill-color: initial;
+      animation: star-spin 10s linear infinite;
+      transform-origin: center;
+      filter: drop-shadow(0 0 4px rgba(200, 169, 110, 0.4));
     }
 
-    @keyframes dot-pulse {
+    @keyframes star-spin {
+      0% {
+        transform: rotate(0deg) scale(1)
+      }
 
-      0%,
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(200, 169, 110, .5)
+      25% {
+        transform: rotate(90deg) scale(1.08)
       }
 
       50% {
-        transform: scale(1.2);
-        box-shadow: 0 0 0 7px rgba(200, 169, 110, 0)
+        transform: rotate(180deg) scale(1)
+      }
+
+      75% {
+        transform: rotate(270deg) scale(1.08)
+      }
+
+      100% {
+        transform: rotate(360deg) scale(1)
       }
     }
 
@@ -2995,8 +3008,8 @@
         font-size: 10px;
       }
     }
-      
-    
+
+
     @media(max-width:380px) {
       .main-hdr {
         padding: 10px 10px 8px !important;
@@ -3180,7 +3193,19 @@
     <aside class="sidebar" id="sidebar" aria-label="Navigation">
       <div class="sb-header">
         <div>
-          <a href="/" class="logo" aria-label="RITUAL home"><span class="logo-dot" aria-hidden="true"></span>RITUAL</a>
+          <a href="/" class="logo" aria-label="RITUAL home">
+            <svg class="logo-star" aria-hidden="true" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:var(--acc)" />
+                  <stop offset="100%" style="stop-color:var(--acl)" />
+                </linearGradient>
+              </defs>
+              <path d="M50 2 C50 2 54 38 98 50 C54 62 50 98 50 98 C50 98 46 62 2 50 C46 38 50 2 50 2Z"
+                fill="url(#starGrad)" />
+            </svg>
+            RITUAL
+          </a>
           <div class="logo-tag">📅 Daily Routine Planner</div>
         </div>
         <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">☀</button>
@@ -3237,8 +3262,7 @@
           <div class="sb-made">Made with ❤️ by <span>KUSHAL</span></div>
           <div class="sb-made">for a better YOU</div>
           <div class="sb-contact">
-            <a class="contact-btn" href="mailto:example.com"
-              aria-label="Send email to Kushal">
+            <a class="contact-btn" href="mailto:kushal@ritualroutineplanner.com" aria-label="Send email to Kushal">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <path d="m22 7-10 7L2 7" />
@@ -3247,18 +3271,18 @@
             </a>
           </div>
           <div class="sb-socials">
-            <a class="social-btn fb" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+            <a class="social-btn fb" href="https://www.facebook.com/profile.php?id=61586240080772" target="_blank" rel="noopener" aria-label="Facebook">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
               </svg>
             </a>
-            <a class="social-btn tw" href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <a class="social-btn tw" href="https://x.com/kushal2229w" target="_blank" rel="noopener" aria-label="X (Twitter)">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
             </a>
-            <a class="social-btn ig" href="https://instagram.com/" target="_blank" rel="noopener"
+            <a class="social-btn ig" href="https://www.instagram.com/kushal22972" target="_blank" rel="noopener"
               aria-label="Instagram">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round">
@@ -3267,7 +3291,7 @@
                 <circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none" />
               </svg>
             </a>
-            <a class="social-btn pt" href="https://pinterest.com/" target="_blank" rel="noopener"
+            <a class="social-btn pt" href="https://in.pinterest.com/pm427245/" target="_blank" rel="noopener"
               aria-label="Pinterest">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path
@@ -3473,13 +3497,12 @@
     </div>
   </div>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script>
     /* ═══ CONSTANTS ═══ */
     const COLORS = ['#c8a96e', '#7b9cff', '#ff6b6b', '#6bcfb3', '#e87bff', '#ff9f43', '#54d2d2', '#ff6b9d'];
     const CAT_COL = { Morning: '#c8a96e', Work: '#7b9cff', Health: '#6bcfb3', Evening: '#e87bff', Personal: '#ff9f43', Learning: '#ff6b6b' };
     const CAT_ICO = { Morning: '🌅', Work: '💼', Health: '💪', Evening: '🌙', Personal: '✨', Learning: '📚' };
-    const QUOTES = ["Discipline is the bridge between goals and accomplishment.", "Small daily improvements lead to stunning results.", "Your future self is watching you right now.", "One day or day one — you decide.", "Every routine is a promise to yourself.", "Consistency beats intensity every time.", "The secret of your future is hidden in your daily routine.", "Win the morning, win the day.", "Motivation gets you started. Habit keeps you going.", "Excellence is not an act, but a habit.", "You do not rise to the level of your goals. You fall to the level of your systems.", "You get what you repeat.", "Our character, basically, is a composite of our habits.", "Small, Smart Choices + Consistency + Time = RADICAL DIFFERENCE." ];
+    const QUOTES = ["Discipline is the bridge between goals and accomplishment.", "Small daily improvements lead to stunning results.", "Your future self is watching you right now.", "One day or day one — you decide.", "Every routine is a promise to yourself.", "Consistency beats intensity every time.", "The secret of your future is hidden in your daily routine.", "Win the morning, win the day.", "Motivation gets you started. Habit keeps you going.", "Excellence is not an act, but a habit.", "You do not rise to the level of your goals. You fall to the level of your systems.", "You get what you repeat.", "Our character, basically, is a composite of our habits.", "Small, Smart Choices + Consistency + Time = RADICAL DIFFERENCE."];
     const DAYS_S = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const MONTHS_L = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     const ONBOARD_SLIDES = [
@@ -3489,7 +3512,7 @@
       { emoji: '🔁', title: 'Repeat & Weekly Frequency', desc: 'Tasks can repeat daily or on specific days of the week — perfect for building custom schedules.', tips: ['📆 Choose Daily to auto-add the task every new day.', '🔢 Choose Weekly then pick days 1–7 (Mon–Sun) for custom frequency.', '⚡ Auto-inject runs silently each time you open the app or navigate to a new day.', '✏️ Edit any repeated task on a specific day without affecting others.'] },
       { emoji: '📊', title: 'Stats & Analytics', desc: 'The Stats tab gives you a full picture of your productivity — streaks, categories, best days, and more.', tips: ['🔥 Track your current completion streak day by day.', '📂 See which categories you spend the most time on.', '⭐ Best days panel shows your most productive days ranked.', '🟩 16-week activity heatmap shows your consistency over time.'] },
       { emoji: '🟩', title: 'Activity Heatmap', desc: '16 weeks of activity shown as tiny circles — empty to deep green based on daily completion.', tips: ['Each circle = one day. Greener = more tasks completed.', '🖱 Hover over any circle to see the date and % complete.', '🏆 Build a streak of green days — consistency is the goal!'] },
-      { emoji: '⚡', title: 'Power Tips & Shortcuts', desc: 'Get the most out of RITUAL with these handy shortcuts.', tips: ['N → Add a new task anywhere on the page.', 'Esc → Close any open panel or modal.', 'Alt + ← / → → Navigate between days.', '📄 Export JSON or 🖨 HTML Report from the sidebar.', '☀ Toggle dark / light mode in the sidebar header.', '📧 Use the Contact button in the sidebar to reach Kushal.'] },
+      { emoji: '⚡', title: 'Power Tips & Shortcuts', desc: 'Get the most out of RITUAL with these handy shortcuts.', tips: ['N → Add a new task anywhere on the page.', 'Esc → Close any open panel or modal.', 'Alt + ← / → → Navigate between days.', '📄 Export JSON or 🖨 HTML Report from the sidebar.', '☀ Toggle dark / light mode in the sidebar header.', '📧 Use the Contact button in the sidebar to reach me for any questions.'] },
     ];
 
     const dateKey = d => { const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), dy = String(d.getDate()).padStart(2, '0'); return `${y}-${m}-${dy}`; };
